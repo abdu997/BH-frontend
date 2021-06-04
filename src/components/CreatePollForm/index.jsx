@@ -39,10 +39,10 @@ function pollOptionsReducer(state, action) {
     let options;
     switch (action.type) {
         case "ADD_OPTION":
-            return [...state, action.option];
+            return [...state, { title: action.option }];
         case "EDIT_OPTION":
             options = [...state];
-            options[action.index] = action.option;
+            options[action.index] = { title: action.option };
             return options;
         case "REMOVE_OPTION":
             options = [...state];
@@ -83,12 +83,12 @@ export default function CreatePollForm({ pollResetHandler }) {
                 onChange={(e) => setQuestion(e.target.value)}
             />
             {pollOptions &&
-                pollOptions.map((option, index) => (
+                pollOptions.map(({ title }, index) => (
                     <div key={index}>
                         <TextField
                             label={"Option #" + (index + 1)}
                             className={classes.pollOption}
-                            value={option}
+                            value={title}
                             onChange={(e) =>
                                 dispatchPollOptions({
                                     type: "EDIT_OPTION",
