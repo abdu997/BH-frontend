@@ -47,13 +47,12 @@ function pollOptionsReducer(state, action) {
     switch (action.type) {
         case "ADD_OPTION":
             // Append new option
-            return [...state, { title: action.option, voteCount: 0 }];
+            return [...state, { title: action.option }];
         case "EDIT_OPTION":
             // Create new variable that will replace state, update option using its index
             options = [...state];
             options[action.index] = {
                 title: action.option,
-                voteCount: 0,
             };
             return options;
         case "REMOVE_OPTION":
