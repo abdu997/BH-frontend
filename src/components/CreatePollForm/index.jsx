@@ -44,8 +44,8 @@ function pollOptionsReducer(state, action) {
         case "EDIT_OPTION":
             options = [...state];
             options[action.index] = {
-                ...options[action.index],
                 title: action.option,
+                voteCount: 0,
             };
             return options;
         case "REMOVE_OPTION":
