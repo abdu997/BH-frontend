@@ -49,10 +49,9 @@ function PollResults() {
                         <XAxis dataKey="title" />
                         <YAxis allowDecimals={false} />
                         <Tooltip />
-                        <Bar dataKey="voteCount" name="votes" fill="#8884d8" />
+                    <Bar dataKey="voteCount" name="votes" fill="#3f51b5" />
                     </BarChart>
                 </ResponsiveContainer>
-            </Typography>
         </Paper>
     );
 }
