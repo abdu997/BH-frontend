@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+// Generates a Bar Chart using Recharts
 function PollResults() {
     const classes = useStyles();
 
@@ -44,14 +45,14 @@ function PollResults() {
             <Typography align="center" className={classes.chartTitle}>
                 {pollQuestion}
             </Typography>
-                <ResponsiveContainer className={classes.barChart}>
-                    <BarChart data={data}>
-                        <XAxis dataKey="title" />
-                        <YAxis allowDecimals={false} />
-                        <Tooltip />
+            <ResponsiveContainer className={classes.barChart}>
+                <BarChart data={data}>
+                    <XAxis dataKey="title" />
+                    <YAxis allowDecimals={false} />
+                    <Tooltip />
                     <Bar dataKey="voteCount" name="votes" fill="#3f51b5" />
-                    </BarChart>
-                </ResponsiveContainer>
+                </BarChart>
+            </ResponsiveContainer>
         </Paper>
     );
 }
