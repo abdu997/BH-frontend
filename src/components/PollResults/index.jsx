@@ -41,7 +41,9 @@ function PollResults() {
     const data = [...pollOptions];
     return (
         <Paper className={classes.paper}>
-            <Typography>
+            <Typography align="center" className={classes.chartTitle}>
+                {pollQuestion}
+            </Typography>
                 <ResponsiveContainer className={classes.barChart}>
                     <BarChart data={data}>
                         <XAxis dataKey="title" />
