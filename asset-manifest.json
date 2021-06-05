@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/Sir-Vote-a-Lot/static/js/main.bc839f2a.chunk.js",
+    "main.js.map": "/Sir-Vote-a-Lot/static/js/main.bc839f2a.chunk.js.map",
+    "runtime-main.js": "/Sir-Vote-a-Lot/static/js/runtime-main.23d3230e.js",
+    "runtime-main.js.map": "/Sir-Vote-a-Lot/static/js/runtime-main.23d3230e.js.map",
+    "static/js/2.f4cc90be.chunk.js": "/Sir-Vote-a-Lot/static/js/2.f4cc90be.chunk.js",
+    "static/js/2.f4cc90be.chunk.js.map": "/Sir-Vote-a-Lot/static/js/2.f4cc90be.chunk.js.map",
+    "static/js/3.babbfc64.chunk.js": "/Sir-Vote-a-Lot/static/js/3.babbfc64.chunk.js",
+    "static/js/3.babbfc64.chunk.js.map": "/Sir-Vote-a-Lot/static/js/3.babbfc64.chunk.js.map",
+    "index.html": "/Sir-Vote-a-Lot/index.html",
+    "static/js/2.f4cc90be.chunk.js.LICENSE.txt": "/Sir-Vote-a-Lot/static/js/2.f4cc90be.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.23d3230e.js",
+    "static/js/2.f4cc90be.chunk.js",
+    "static/js/main.bc839f2a.chunk.js"
+  ]
+}
