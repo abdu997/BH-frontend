@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import { useState, useReducer } from "react";
+import { useState, useReducer, useEffect } from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
@@ -70,11 +70,32 @@ function CreatePollForm({ pollResetHandler }) {
     const classes = useStyles();
     const [question, setQuestion] = useState("");
     const [newOption, setNewOption] = useState("");
+    const [disableReset, setDisableReset] = useState(false);
 
     const [pollOptions, dispatchPollOptions] = useReducer(
         pollOptionsReducer,
         []
     );
+
+    // Whenever state changes, disable reset button if the question or any option title is longer than 80 chars or there are more than 10 options or less than 2
+    useEffect(() => {
+        if (pollOptions.length >= 10 || pollOptions.length < 2) {
+            setDisableReset(true);
+            return;
+        }
+        if (question.length > 80 || question.length === 0) {
+            setDisableReset(true);
+            return;
+        }
+        for (let option of pollOptions) {
+            if (option.title.length > 80 || option.title.length === 0) {
+                setDisableReset(true);
+                return;
+            }
+        }
+
+        setDisableReset(false);
+    }, [pollOptions, question]);
 
     // Adds new option and empties add option field
     const addOption = (e) => {
@@ -83,10 +104,14 @@ function CreatePollForm({ pollResetHandler }) {
         setNewOption("");
     };
 
-    // Passes new question and options to higher component
+    // Empties vote counts and passes new question and options to higher component
     const resetPoll = (e) => {
         e.preventDefault();
-        pollResetHandler(question, pollOptions);
+        const options = pollOptions.map((option) => {
+            option["voteCount"] = 0;
+            return option;
+        });
+        pollResetHandler(question, options);
     };
 
     return (
@@ -97,6 +122,12 @@ function CreatePollForm({ pollResetHandler }) {
                     fullWidth
                     value={question}
                     onChange={(e) => setQuestion(e.target.value)}
+                    error={question.length > 80}
+                    helperText={
+                        question.length > 80
+                            ? "This field has an 80 character limit"
+                            : ""
+                    }
                 />
                 {pollOptions &&
                     pollOptions.map(({ title }, index) => (
@@ -111,6 +142,12 @@ function CreatePollForm({ pollResetHandler }) {
                                         index: index,
                                         option: e.target.value,
                                     })
+                                }
+                                error={pollOptions[index].title.length > 80}
+                                helperText={
+                                    pollOptions[index].title.length > 80
+                                        ? "This field has an 80 character limit"
+                                        : ""
                                 }
                             />
                             <Button
@@ -134,6 +171,13 @@ function CreatePollForm({ pollResetHandler }) {
                         className={classes.pollOption}
                         value={newOption}
                         onChange={(e) => setNewOption(e.target.value)}
+                        error={newOption.length > 80}
+                        helperText={
+                            newOption.length > 80
+                                ? "This field has an 80 character limit"
+                                : ""
+                        }
+                        disabled={pollOptions.length >= 10}
                     />
                     <Button
                         type="submit"
@@ -141,6 +185,11 @@ function CreatePollForm({ pollResetHandler }) {
                         color="primary"
                         className={classes.pollButton}
                         onClick={addOption}
+                        disabled={
+                            pollOptions.length >= 10 ||
+                            newOption.length > 80 ||
+                            newOption.length === 0
+                        }
                     >
                         Add
                     </Button>
@@ -148,7 +197,9 @@ function CreatePollForm({ pollResetHandler }) {
                 <Grid container>
                     <Grid item xs={9} className={classes.optionsCounter}>
                         <Typography align={"left"}>
-                            {pollOptions.length}/10 possible answers
+                            {pollOptions.length < 2
+                                ? "Poll must have at least 2 options"
+                                : pollOptions.length + "/10 possible answers"}
                         </Typography>
                     </Grid>
                     <Grid item xs={3}>
@@ -157,6 +208,7 @@ function CreatePollForm({ pollResetHandler }) {
                             variant="contained"
                             color="primary"
                             onClick={resetPoll}
+                            disabled={disableReset}
                         >
                             Reset
                         </Button>
