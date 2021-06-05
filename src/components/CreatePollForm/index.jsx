@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState, useReducer } from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -56,7 +57,7 @@ function pollOptionsReducer(state, action) {
     }
 }
 
-export default function CreatePollForm({ pollResetHandler }) {
+function CreatePollForm({ pollResetHandler }) {
     const classes = useStyles();
     const [question, setQuestion] = useState("");
     const [newOption, setNewOption] = useState("");
@@ -152,3 +153,9 @@ export default function CreatePollForm({ pollResetHandler }) {
         </form>
     );
 }
+
+CreatePollForm.propTypes = {
+    pollResetHandler: PropTypes.func.isRequired,
+};
+
+export default CreatePollForm;
