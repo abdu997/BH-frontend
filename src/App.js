@@ -21,10 +21,6 @@ const useStyles = makeStyles((theme) => ({
     content: {
         margin: theme.spacing(2, 0),
     },
-    paper: {
-        padding: theme.spacing(2),
-        color: theme.palette.text.secondary,
-    },
 }));
 
 function App() {
@@ -49,16 +45,12 @@ function App() {
                 <Container>
                     <Grid container spacing={3}>
                         <Grid item md={4}>
-                            <Paper className={classes.paper}>
-                                <CreatePollForm
-                                    pollResetHandler={pollResetHandler}
-                                />
-                            </Paper>
+                            <CreatePollForm
+                                pollResetHandler={pollResetHandler}
+                            />
                         </Grid>
                         <Grid item md={4}>
-                            <Paper className={classes.paper}>
-                                <PollForm registerVote={registerVote} />
-                            </Paper>
+                            <PollForm registerVote={registerVote} />
                         </Grid>
                         <Grid item md={4}>
                             <PollResults />

@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { useState, useReducer } from "react";
 
 import { makeStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
@@ -33,6 +34,10 @@ const useStyles = makeStyles((theme) => ({
     },
     optionsCounter: {
         margin: "auto",
+    },
+    paper: {
+        padding: theme.spacing(2),
+        color: theme.palette.text.secondary,
     },
 }));
 
@@ -86,78 +91,80 @@ function CreatePollForm({ pollResetHandler }) {
     };
 
     return (
-        <form className={classes.root} noValidate autoComplete="off">
-            <TextField
-                label="Poll Question"
-                fullWidth
-                value={question}
-                onChange={(e) => setQuestion(e.target.value)}
-            />
-            {pollOptions &&
-                pollOptions.map(({ title }, index) => (
-                    <div key={index}>
-                        <TextField
-                            label={"Option #" + (index + 1)}
-                            className={classes.pollOption}
-                            value={title}
-                            onChange={(e) =>
-                                dispatchPollOptions({
-                                    type: "EDIT_OPTION",
-                                    index: index,
-                                    option: e.target.value,
-                                })
-                            }
-                        />
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            className={classes.pollButton}
-                            onClick={() =>
-                                dispatchPollOptions({
-                                    type: "REMOVE_OPTION",
-                                    index: index,
-                                })
-                            }
-                        >
-                            <ClearIcon />
-                        </Button>
-                    </div>
-                ))}
-            <div>
+        <Paper className={classes.paper}>
+            <form className={classes.root} noValidate autoComplete="off">
                 <TextField
-                    label="Add Option"
-                    className={classes.pollOption}
-                    value={newOption}
-                    onChange={(e) => setNewOption(e.target.value)}
+                    label="Poll Question"
+                    fullWidth
+                    value={question}
+                    onChange={(e) => setQuestion(e.target.value)}
                 />
-                <Button
-                    type="submit"
-                    variant="contained"
-                    color="primary"
-                    className={classes.pollButton}
-                    onClick={addOption}
-                >
-                    Add
-                </Button>
-            </div>
-            <Grid container>
-                <Grid item xs={9} className={classes.optionsCounter}>
-                    <Typography align={"left"}>
-                        {pollOptions.length}/10 possible answers
-                    </Typography>
-                </Grid>
-                <Grid item xs={3}>
+                {pollOptions &&
+                    pollOptions.map(({ title }, index) => (
+                        <div key={index}>
+                            <TextField
+                                label={"Option #" + (index + 1)}
+                                className={classes.pollOption}
+                                value={title}
+                                onChange={(e) =>
+                                    dispatchPollOptions({
+                                        type: "EDIT_OPTION",
+                                        index: index,
+                                        option: e.target.value,
+                                    })
+                                }
+                            />
+                            <Button
+                                variant="contained"
+                                color="primary"
+                                className={classes.pollButton}
+                                onClick={() =>
+                                    dispatchPollOptions({
+                                        type: "REMOVE_OPTION",
+                                        index: index,
+                                    })
+                                }
+                            >
+                                <ClearIcon />
+                            </Button>
+                        </div>
+                    ))}
+                <div>
+                    <TextField
+                        label="Add Option"
+                        className={classes.pollOption}
+                        value={newOption}
+                        onChange={(e) => setNewOption(e.target.value)}
+                    />
                     <Button
                         type="submit"
                         variant="contained"
                         color="primary"
-                        onClick={resetPoll}
+                        className={classes.pollButton}
+                        onClick={addOption}
                     >
-                        Reset
+                        Add
                     </Button>
+                </div>
+                <Grid container>
+                    <Grid item xs={9} className={classes.optionsCounter}>
+                        <Typography align={"left"}>
+                            {pollOptions.length}/10 possible answers
+                        </Typography>
+                    </Grid>
+                    <Grid item xs={3}>
+                        <Button
+                            type="submit"
+                            variant="contained"
+                            color="primary"
+                            onClick={resetPoll}
+                        >
+                            Reset
+                        </Button>
+                    </Grid>
                 </Grid>
-            </Grid>
-        </form>
+            </form>
+        </Paper>
     );
 }
 

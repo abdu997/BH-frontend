@@ -23,6 +23,10 @@ const useStyles = makeStyles((theme) => ({
         width: "100%",
         minHeight: "300px",
     },
+    paper: {
+        padding: theme.spacing(2),
+        color: theme.palette.text.secondary,
+    },
 }));
 
 function PollResults() {
