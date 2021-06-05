@@ -43,15 +43,15 @@ function App() {
             <div className={classes.content}>
                 <Container>
                     <Grid container spacing={3}>
-                        <Grid item md={4}>
+                        <Grid item xs={12} md={4}>
                             <CreatePollForm
                                 pollResetHandler={pollResetHandler}
                             />
                         </Grid>
-                        <Grid item md={4}>
+                        <Grid item xs={12} md={4}>
                             <PollForm registerVote={registerVote} />
                         </Grid>
-                        <Grid item md={4}>
+                        <Grid item xs={12} md={4}>
                             <PollResults />
                         </Grid>
                     </Grid>
