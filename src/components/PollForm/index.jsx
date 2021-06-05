@@ -60,7 +60,7 @@ function PollForm({ registerVote }) {
 }
 
 PollForm.propTypes = {
-    registerVote: PropTypes.func,
+    registerVote: PropTypes.func.isRequired,
 };
 
 export default PollForm;
