@@ -39,10 +39,13 @@ function pollOptionsReducer(state, action) {
     let options;
     switch (action.type) {
         case "ADD_OPTION":
-            return [...state, { title: action.option }];
+            return [...state, { title: action.option, voteCount: 0 }];
         case "EDIT_OPTION":
             options = [...state];
-            options[action.index] = { title: action.option };
+            options[action.index] = {
+                ...options[action.index],
+                title: action.option,
+            };
             return options;
         case "REMOVE_OPTION":
             options = [...state];
