@@ -22,14 +22,17 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+// Root of the sir vote-a-lot app that renders Navbar and sections
 function App() {
     const [pollSettings, setPollSettings] = useState({});
     const classes = useStyles();
 
+    // Function that will be passed in to the CreatePollForm to handle settings reset
     const pollResetHandler = (pollQuestion, pollOptions) => {
         setPollSettings({ pollQuestion, pollOptions });
     };
 
+    // Increments an option's vote count and saves vote into pollsettings, this function will be passed into the voting form.
     const registerVote = (option) => {
         const poll = { ...pollSettings };
         poll["pollOptions"][option]["voteCount"] =
