@@ -195,14 +195,14 @@ function CreatePollForm({ pollResetHandler }) {
                     </Button>
                 </div>
                 <Grid container>
-                    <Grid item xs={9} className={classes.optionsCounter}>
+                    <Grid item sm={9} className={classes.optionsCounter}>
                         <Typography align={"left"}>
                             {pollOptions.length < 2
                                 ? "Poll must have at least 2 options"
                                 : pollOptions.length + "/10 possible answers"}
                         </Typography>
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item sm={3}>
                         <Button
                             type="submit"
                             variant="contained"
