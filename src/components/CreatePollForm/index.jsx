@@ -36,12 +36,15 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
+// Poll reducer to handle changes in poll options
 function pollOptionsReducer(state, action) {
     let options;
     switch (action.type) {
         case "ADD_OPTION":
+            // Append new option
             return [...state, { title: action.option, voteCount: 0 }];
         case "EDIT_OPTION":
+            // Create new variable that will replace state, update option using its index
             options = [...state];
             options[action.index] = {
                 title: action.option,
@@ -49,6 +52,7 @@ function pollOptionsReducer(state, action) {
             };
             return options;
         case "REMOVE_OPTION":
+            // Create new variable that will replace state, delete option element using its index
             options = [...state];
             options.splice(action.index, 1);
             return options;
@@ -57,6 +61,7 @@ function pollOptionsReducer(state, action) {
     }
 }
 
+// Component to generate a new poll
 function CreatePollForm({ pollResetHandler }) {
     const classes = useStyles();
     const [question, setQuestion] = useState("");
@@ -67,12 +72,14 @@ function CreatePollForm({ pollResetHandler }) {
         []
     );
 
+    // Adds new option and empties add option field
     const addOption = (e) => {
         e.preventDefault();
         dispatchPollOptions({ type: "ADD_OPTION", option: newOption });
         setNewOption("");
     };
 
+    // Passes new question and options to higher component
     const resetPoll = (e) => {
         e.preventDefault();
         pollResetHandler(question, pollOptions);
