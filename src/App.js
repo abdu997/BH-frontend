@@ -7,6 +7,7 @@ import Container from "@material-ui/core/Container";
 import NavBar from "./components/NavBar";
 import CreatePollForm from "./components/CreatePollForm";
 import PollForm from "./components/PollForm";
+import PollResults from "./components/PollResults";
 
 import PollContext from "./utils/PollContext";
 
@@ -60,7 +61,7 @@ function App() {
                             </Paper>
                         </Grid>
                         <Grid item md={4}>
-                            <Paper className={classes.paper}></Paper>
+                            <PollResults />
                         </Grid>
                     </Grid>
                 </Container>
