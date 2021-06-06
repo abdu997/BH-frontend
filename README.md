@@ -4,7 +4,7 @@ Sir Vote-a-lot is a tool built with ReactJS that will help you create anonymous 
 
 ## Table of Contents
 
--   [Live Project](https://abdu997.github.io/sir-vote-a-lot/)
+-   [Live Project](#live-project)
 -   [Requirments](#requirments)
 -   [Install](#install)
 -   [Run](#run)
