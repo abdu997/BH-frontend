@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/Sir-Vote-a-Lot/static/js/main.bc839f2a.chunk.js",
-    "main.js.map": "/Sir-Vote-a-Lot/static/js/main.bc839f2a.chunk.js.map",
+    "main.js": "/Sir-Vote-a-Lot/static/js/main.7841a0ea.chunk.js",
+    "main.js.map": "/Sir-Vote-a-Lot/static/js/main.7841a0ea.chunk.js.map",
     "runtime-main.js": "/Sir-Vote-a-Lot/static/js/runtime-main.23d3230e.js",
     "runtime-main.js.map": "/Sir-Vote-a-Lot/static/js/runtime-main.23d3230e.js.map",
     "static/js/2.f4cc90be.chunk.js": "/Sir-Vote-a-Lot/static/js/2.f4cc90be.chunk.js",
@@ -14,6 +14,6 @@
   "entrypoints": [
     "static/js/runtime-main.23d3230e.js",
     "static/js/2.f4cc90be.chunk.js",
-    "static/js/main.bc839f2a.chunk.js"
+    "static/js/main.7841a0ea.chunk.js"
   ]
 }
