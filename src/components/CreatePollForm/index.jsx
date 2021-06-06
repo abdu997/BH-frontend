@@ -177,7 +177,7 @@ function CreatePollForm({ pollResetHandler }) {
                                 ? "This field has an 80 character limit"
                                 : ""
                         }
-                        disabled={pollOptions.length > 10}
+                        disabled={pollOptions.length >= 10}
                     />
                     <Button
                         type="submit"
@@ -186,7 +186,7 @@ function CreatePollForm({ pollResetHandler }) {
                         className={classes.pollButton}
                         onClick={addOption}
                         disabled={
-                            pollOptions.length > 10 ||
+                            pollOptions.length >= 10 ||
                             newOption.length > 80 ||
                             newOption.length === 0
                         }
