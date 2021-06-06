@@ -79,7 +79,7 @@ function CreatePollForm({ pollResetHandler }) {
 
     // Whenever state changes, disable reset button if the question or any option title is longer than 80 chars or there are more than 10 options or less than 2
     useEffect(() => {
-        if (pollOptions.length >= 10 || pollOptions.length < 2) {
+        if (pollOptions.length > 10 || pollOptions.length < 2) {
             setDisableReset(true);
             return;
         }
@@ -177,7 +177,7 @@ function CreatePollForm({ pollResetHandler }) {
                                 ? "This field has an 80 character limit"
                                 : ""
                         }
-                        disabled={pollOptions.length >= 10}
+                        disabled={pollOptions.length > 10}
                     />
                     <Button
                         type="submit"
@@ -186,7 +186,7 @@ function CreatePollForm({ pollResetHandler }) {
                         className={classes.pollButton}
                         onClick={addOption}
                         disabled={
-                            pollOptions.length >= 10 ||
+                            pollOptions.length > 10 ||
                             newOption.length > 80 ||
                             newOption.length === 0
                         }
