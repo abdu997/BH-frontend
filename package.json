@@ -2,7 +2,7 @@
   "name": "sir-vote-a-lot",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://abdu997.github.io/Sir-Vote-a-Lot/",
+  "homepage": "https://abdu997.github.io/sir-vote-a-Lot/",
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
