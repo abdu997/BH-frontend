@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/sir-vote-a-Lot/static/js/main.7841a0ea.chunk.js",
-    "main.js.map": "/sir-vote-a-Lot/static/js/main.7841a0ea.chunk.js.map",
-    "runtime-main.js": "/sir-vote-a-Lot/static/js/runtime-main.4f8b2dea.js",
-    "runtime-main.js.map": "/sir-vote-a-Lot/static/js/runtime-main.4f8b2dea.js.map",
-    "static/js/2.f4cc90be.chunk.js": "/sir-vote-a-Lot/static/js/2.f4cc90be.chunk.js",
-    "static/js/2.f4cc90be.chunk.js.map": "/sir-vote-a-Lot/static/js/2.f4cc90be.chunk.js.map",
-    "static/js/3.babbfc64.chunk.js": "/sir-vote-a-Lot/static/js/3.babbfc64.chunk.js",
-    "static/js/3.babbfc64.chunk.js.map": "/sir-vote-a-Lot/static/js/3.babbfc64.chunk.js.map",
-    "index.html": "/sir-vote-a-Lot/index.html",
-    "static/js/2.f4cc90be.chunk.js.LICENSE.txt": "/sir-vote-a-Lot/static/js/2.f4cc90be.chunk.js.LICENSE.txt"
+    "main.js": "/sir-vote-a-lot/static/js/main.7841a0ea.chunk.js",
+    "main.js.map": "/sir-vote-a-lot/static/js/main.7841a0ea.chunk.js.map",
+    "runtime-main.js": "/sir-vote-a-lot/static/js/runtime-main.62350fba.js",
+    "runtime-main.js.map": "/sir-vote-a-lot/static/js/runtime-main.62350fba.js.map",
+    "static/js/2.f4cc90be.chunk.js": "/sir-vote-a-lot/static/js/2.f4cc90be.chunk.js",
+    "static/js/2.f4cc90be.chunk.js.map": "/sir-vote-a-lot/static/js/2.f4cc90be.chunk.js.map",
+    "static/js/3.babbfc64.chunk.js": "/sir-vote-a-lot/static/js/3.babbfc64.chunk.js",
+    "static/js/3.babbfc64.chunk.js.map": "/sir-vote-a-lot/static/js/3.babbfc64.chunk.js.map",
+    "index.html": "/sir-vote-a-lot/index.html",
+    "static/js/2.f4cc90be.chunk.js.LICENSE.txt": "/sir-vote-a-lot/static/js/2.f4cc90be.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.4f8b2dea.js",
+    "static/js/runtime-main.62350fba.js",
     "static/js/2.f4cc90be.chunk.js",
     "static/js/main.7841a0ea.chunk.js"
   ]
